@@ -81,15 +81,14 @@
     height: auto;
     float: left;
     position: relative;
+    height: 55px;
 }
 #other-chat{
     width: 70%;
     height: auto;
     float: right;
     position: relative;
-}
-span{
-    width: auto;
+    height: 55px;
 }
 .time{
     position: absolute;
