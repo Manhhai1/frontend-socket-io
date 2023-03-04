@@ -42,10 +42,18 @@ function Chat({ username, room, socket }) {
                 {
                     messageArr.length > 0 && messageArr.map((item, index) => {
                         if (item) {
-                            return item.author === username ? (<div id="you-chat" key={index}><span style={{ float: 'left', margin: '10px', background: "#54B435", padding: '8px', borderRadius: '15px', color: 'white', fontSize: '0.9em' }}>{item.message}</span></div>) :
-                                (<div id="other-chat" key={index}><span style={{ float: 'right', margin: '10px', background: '#3E54AC', padding: '8px', borderRadius: '15px', color: 'white', fontSize: '0.9em' }} >{item.message} </span></div>)
+                            return item.author === username ? (<div id="you-chat" key={index}><span style={{ float: 'left', marginTop: '10px', marginLeft: '10px', background: "#54B435", padding: '8px', borderRadius: '15px', color: 'white', fontSize: '0.9em' }}>{item.message}
+                            </span>
+                                <p className='time'>{item.time} <b>{item.author}</b></p>
+                            </div>
+                                
+                            ) :
+                                (<div id="other-chat" key={index}><span style={{ float: 'right', marginTop: '10px', marginRight:'10px', background: '#3E54AC', padding: '8px', borderRadius: '15px', color: 'white', fontSize: '0.9em' }} >{item.message} </span>
+                                    <p className='time-other'><span>{item.time} <b>{item.author}</b></span></p></div>)
                         }
+                     
                     })
+                    
                 }
 
             </div>

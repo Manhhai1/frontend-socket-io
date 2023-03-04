@@ -6,7 +6,7 @@ import { URL_BACKEND } from './constant';
 
 
 
-const socket = io.connect(URL_BACKEND)
+const socket = io.connect('https://backend-real-chat.onrender.com')
 function App() {
   const [username, setUsername] = useState('')
   const [room, setRoom] = useState('')
@@ -47,8 +47,8 @@ function App() {
       {
         chat === true ? (<Chat room={room} socket={socket} username={username}></Chat>) : (<div className="chat-room">
           <div className="header-room">Chat App</div>
-          <input type="text" id='name' width={'300px'} height={'50px'} className='input form-control' placeholder='Join with ID ...' value={username} onChange={(e) => setUsername(e.target.value)} />
-          <label for="" id='label-name' style={{ display: 'none' }}>JoinID is invalid</label>
+          <input type="text" id='name' width={'300px'} height={'50px'} className='input form-control' placeholder='Join with your Name ...' value={username} onChange={(e) => setUsername(e.target.value)} />
+          <label for="" id='label-name' style={{ display: 'none' }}>Join Name is invalid</label>
           <input type="text" className='input form-control' placeholder='Room ID...' value={room} onChange={(e) => setRoom(e.target.value)} />
           <label for="" id='label-room' style={{ display: 'none' }}>Room ID is invalid</label>
           <button type="button" className="btn button-63" onClick={() => joinRoom()}>Join a Room</button>
